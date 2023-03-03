@@ -7,7 +7,7 @@ const request = require('request');
     //Create the browser instance and navigate to url
     const page = await browser.newPage();
     //Get the source and destination in case of redirect
-    await page.goto('https://bolster.ai/');
+    await page.goto('https://www.google.com/');
 
     page.on('response', response => {
         const status = response.status()
