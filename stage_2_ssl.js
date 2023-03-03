@@ -5,7 +5,7 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
   
   // Navigate to the IP address
-  await page.goto('https://bolster.ai/');
+  await page.goto('https://www.google.com/');
   const securityDetails = await page.target('Security.getSecurityState');
   console.log(securityDetails);
   await browser.close();
