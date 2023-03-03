@@ -6,9 +6,9 @@ const request = require('request');
   const browser = await puppeteer.launch();
   //Create the browser instance and navigate to url
   const page = await browser.newPage();
-  await page.goto('https://bolster.ai/');
+  await page.goto('https://www.google.com/');
   //Take the screen shot
-  await page.screenshot({ path: 'bolster.png' });
+  await page.screenshot({ path: 'google.png' });
   await browser.close();
 })();
 
@@ -18,7 +18,7 @@ const request = require('request');
   const browser = await puppeteer.launch();
   //Create the browser instance and navigate to url
   const page = await browser.newPage();
-  await page.goto('https://bolster.ai/');
+  await page.goto('https://www.google.com/');
   //This will get the hostname
   const hostname = new URL(page.url()).hostname;
 
