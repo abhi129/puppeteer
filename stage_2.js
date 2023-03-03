@@ -18,27 +18,3 @@ const axios = require('axios');
   
   await browser.close();
 })();
-
-(async () => {
-  const browser = await puppeteer.launch();
-  const page = await browser.newPage();
-
-  // Navigate to the HTTPS site
-  await page.goto('https://www.whatismyip.com/');
-  
-  // Retrieve the SSL certificate details
-  const certDetails = await page.evaluate(() => {
-    const cert = window.performance.getEntriesByType("navigation")[0].serverTiming[0];
-    const parsedCert = JSON.parse(cert.description);
-    return {
-      issuer: parsedCert.issuer,
-      subject: parsedCert.subject,
-      validFrom: parsedCert.valid_from,
-      validTo: parsedCert.valid_to
-    };
-  });
-
-  console.log(certDetails);
-
-  await browser.close();
-})();
